@@ -2,3 +2,4 @@ virtualenv/
 geckodriver.exe
 *.log
 *.sqlite3
+*.pyc
