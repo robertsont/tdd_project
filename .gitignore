@@ -3,3 +3,4 @@ geckodriver.exe
 *.log
 *.sqlite3
 *.pyc
+/static
