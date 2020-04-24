@@ -4,3 +4,4 @@ geckodriver.exe
 *.sqlite3
 *.pyc
 /static
+.env
