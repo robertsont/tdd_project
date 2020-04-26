@@ -21,7 +21,7 @@ class ItemValidationTest(FunctionalTest):
         self.browser.find_element_by_id('id_new_item').send_keys("Retry")
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
         #self.assertNotIn("You can't have an empty list item", self.browser.page_source)
-        self.wait_for_row_in_list_table("1. Retry")
+        self.wait_for_row_in_list_table("1: Retry")
 
         # Perversely, she now decides to submit a second blank list item
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
@@ -35,7 +35,7 @@ class ItemValidationTest(FunctionalTest):
         # And she can corrext it by filling some text in
         self.browser.find_element_by_id('id_new_item').send_keys("Retry twice")
         self.browser.find_element_by_id('id_new_item').send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table("1. Retry")
-        self.wait_for_row_in_list_table("2. Retry twice")
+        self.wait_for_row_in_list_table("1: Retry")
+        self.wait_for_row_in_list_table("2: Retry twice")
         #self.assertNotIn("You can't have an empty list item", self.browser.page_source)
 
