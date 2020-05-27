@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Javascript tests</title>
+    <link rel="stylesheet" href="qunit-2.10.0.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <form>
+            <input name="text" />
+            <div class="has-error">Error text</div>
+        </form>
+    </div>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script src="../list.js"></script>
+    <script src="qunit-2.10.0.js"></script>
+
+    <script>
+
+        console.log('qunit tests start');
+
+        QUnit.test("errors should be hidden on keypress", function (assert) {
+            window.Superlists.initialize();
+            $('input[name="text"]').trigger('keypress');
+            assert.equal($('.has-error').is(':visible'), false);
+        });
+
+        QUnit.test("errors aren't hidden if there is no keypress", function (assert) {
+            window.Superlists.initialize();
+            assert.equal($('.has-error').is(':visible'), true);
+        });
+    </script>
+</body>
+</html>
