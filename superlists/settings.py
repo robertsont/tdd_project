@@ -78,6 +78,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'lists.staging_port_middleware.ServerURLWithStagingPortMiddlware',
 ]
 
 ROOT_URLCONF = 'superlists.urls'
