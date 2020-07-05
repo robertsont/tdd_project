@@ -1,6 +1,7 @@
 from fabric.api import run
 from fabric.context_managers import settings, shell_env
 
+SERVER_IP = '157.245.209.108'
 
 def _get_manage_dot_py(host):
     return f'~/sites/{host}/virtualenv/bin/python ~/SITES/{host}/manage.py'
@@ -8,7 +9,7 @@ def _get_manage_dot_py(host):
 
 def reset_database(host):
     manage_dot_py = _get_manage_dot_py(host)
-    with settings(host_string=f'trobe@{host}'):
+    with settings(host_string=f'trobe@{SERVER_IP}'):
         run(f'{manage_dot_py} flush --noinput')
 
 
@@ -19,7 +20,7 @@ def _get_server_env_vars(host):
 
 def create_session_on_server(host, email):
     manage_dot_py = _get_manage_dot_py(host)
-    with settings(host_string=f'trobe@{host}'):
+    with settings(host_string=f'trobe@{SERVER_IP}'):
         env_vars = _get_server_env_vars(host)
         with shell_env(**env_vars):
             session_key = run(f'{manage_dot_py} create_session {email}')
