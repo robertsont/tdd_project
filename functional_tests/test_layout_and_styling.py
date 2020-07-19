@@ -19,9 +19,7 @@ class LayoutAndStylingTest(FunctionalTest):
 
         # She starts a new list and sees the input is nicely
         # centered there too
-        inputbox.send_keys('testing')
-        inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1: testing')
+        self.add_list_item('testing')
         inputbox = self.get_item_input_box()
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,

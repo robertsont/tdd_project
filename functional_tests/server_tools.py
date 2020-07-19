@@ -2,8 +2,8 @@ from fabric.api import run
 from fabric.context_managers import settings, shell_env
 import os
 
-STAGING_SERVER_IP = os.environ["STAGING_SERVER_IP"]
-IDENTITY_FILE = os.environ["IDENTITY_FILE"]
+STAGING_SERVER_IP = os.environ.get("STAGING_SERVER_IP")
+IDENTITY_FILE = os.environ.get("IDENTITY_FILE")
 
 def _get_manage_dot_py(site):
     return f'~/sites/{site}/virtualenv/bin/python ~/sites/{site}/manage.py'
