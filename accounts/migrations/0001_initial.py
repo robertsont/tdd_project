@@ -9,14 +9,18 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('email', models.EmailField(max_length=254, primary_key=True, serialize=False)),
+                (
+                    "email",
+                    models.EmailField(
+                        max_length=254, primary_key=True, serialize=False
+                    ),
+                ),
             ],
         ),
     ]
