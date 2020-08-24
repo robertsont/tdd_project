@@ -5,3 +5,4 @@ geckodriver.exe
 *.pyc
 /static
 .env
+functional_tests/screendumps
