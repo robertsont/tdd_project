@@ -54,11 +54,11 @@ class FunctionalTest(StaticLiveServerTestCase):
     
     def _get_filename(self):
         timestamp = datetime.now().isoformat().replace(':', '.')[:19]
-        return '{folder}/{classname}.{method}-window{windowid}-{timestampe}'.format(
+        return '{folder}/{classname}.{method}-window{windowid}-{timestamp}'.format(
             folder=SCREEN_DUMP_LOCATION,
             classname=self.__class__.__name__,
             method=self._testMethodName,
-            windowis=self._windowid,
+            windowid=self._windowid,
             timestamp=timestamp
         )
 
